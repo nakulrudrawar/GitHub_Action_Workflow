@@ -8,3 +8,4 @@ jobs:
 
     steps:
       - run: echo "Welcome to GitHub Actions"
+      - run: echo "This is a second step"
