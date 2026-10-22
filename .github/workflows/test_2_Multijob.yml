@@ -1,0 +1,16 @@
+name: Multijob Greeting
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Building the project"
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Running the job"
+      - run: echo "Completed"
