@@ -11,3 +11,8 @@ jobs:
         with:
           name: build-report
           path: report.txt
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-report
+          path: report.txt
