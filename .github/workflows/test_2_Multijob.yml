@@ -1,6 +1,6 @@
 name: Multijob Greeting
 
-on: push
+#on: push
 
 jobs:
   build:
