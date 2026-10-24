@@ -1,0 +1,25 @@
+name: Environment Variables Example
+
+on: push
+
+env:
+  APP_NAME: MyGlobalValue
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      APP_NAME: MyApp
+
+    steps:
+      - run: echo $APP_NAME
+      - run: echo ${{ env.APP_NAME }}
+      - run: echo ${{ github.event_name }}
+      - run: echo ${{ github.ref }}
+      - run: echo ${{ github.repository }}
+      - run: echo ${{ github.actor }}
+      - run: echo ${{ github.workflow }}
+      - run: echo ${{ github.event }}
+      - run: echo ${{ github.sha }}
+      - run: echo ${{ github.ref_name }}
+      - run: echo ${{ github.event.action }}
