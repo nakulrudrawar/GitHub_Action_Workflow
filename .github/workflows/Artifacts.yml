@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/upload-artifact@v4
+        with:
+          name: build-report
 
       - run: echo "Build complete" > report.txt
 
