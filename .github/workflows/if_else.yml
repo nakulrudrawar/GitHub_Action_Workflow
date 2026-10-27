@@ -1,0 +1,13 @@
+name: If Else Workflow
+
+on: workflow_dispatch
+
+jobs:
+  buil:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build Started"
+      - if: github.ref == 'refs/heads/main'
+        run: echo "Deploying"
+
+      - run: echo "Build Finished"
