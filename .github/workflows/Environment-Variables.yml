@@ -2,8 +2,8 @@ name: Environment Variables Example
 
 on: workflow_dispatch
 
-env:
-  APP_NAME: MyGlobalValue
+# env:
+  # APP_NAME: MyGlobalValue
 jobs:
   build:
     runs-on: ubuntu-latest
