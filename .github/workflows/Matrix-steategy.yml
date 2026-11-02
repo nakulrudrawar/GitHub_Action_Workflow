@@ -1,0 +1,21 @@
+name: Matrix Strategy Workflow
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Print OS
+        run: echo "Running on ${{ matrix.os }}"
+      - name: Run on Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: echo "This is Ubuntu"
+      - name: Run on Windows
+        if: matrix.os == 'windows-latest'
+        run: echo "This is Windows"
