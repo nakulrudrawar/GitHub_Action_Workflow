@@ -11,7 +11,7 @@ jobs:
       - run: echo "Running CI pipeline" > buil-report.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: uild-report
+          name: build-report
           path: buil-report.txt
 
   test:
