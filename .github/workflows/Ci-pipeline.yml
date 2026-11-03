@@ -1,0 +1,32 @@
+name: CI Pipeline
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cho "Running CI pipeline" > buil-report.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name:build-report
+          path: buil-report.txt
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running tests"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ction/download-artifact@v4
+        with: 
+          name: build-report
+        
+      - run: cat build-report.txt
+      - run: echo "eploying Application"
